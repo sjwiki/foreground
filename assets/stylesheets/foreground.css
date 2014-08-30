@@ -18,7 +18,7 @@ html, body {
 	height: 100%;
 	margin: 0 auto -5em;
 }
-footer, .push {
+.push {
 	height: 5em;
 }
 
@@ -140,12 +140,9 @@ div.small-9.columns textarea {
 }
 
 footer.row {
-  padding-top:5em;
   text-align: center;
   font-size: 80%;
   width: 80%;
-/*  margin-top: -10em;
-   negative value of footer height */
   height: 5em;
 }
 
