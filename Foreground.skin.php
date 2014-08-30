@@ -69,7 +69,6 @@ class foregroundTemplate extends BaseTemplate {
 		}
 ?>
 <!-- START FOREGROUNDTEMPLATE -->
-  <div id="container">
 		<nav class="top-bar">
 						<ul class="title-area">
 							<li class="name"><h1><a href="<?php echo $this->data['nav_urls']['mainpage']['href']; ?>"><?php echo $this->text('sitename'); ?></a></h1></li>
@@ -205,7 +204,6 @@ class foregroundTemplate extends BaseTemplate {
 				</ul>
 			</footer>
 
-	</div>
    </div>
 		<?php $this->printTrail(); ?>
 
