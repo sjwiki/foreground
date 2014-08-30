@@ -7,13 +7,39 @@ body {
 body {
   line-height: 1.6em;
 }
-div#container {
-   min-height:100%;
-   position:relative;
-}
 
-div#body {
-   padding-bottom:5em;   /* Height of the footer */
+
+#wrap {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+max-width: 58em;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: -50px;
+/* margin: 250px auto 4em auto; */
+/* margin: 250px auto 4em auto; */
+}
+#main {
+overflow:auto;
+padding-bottom: 50px;
+/* margin-left: auto; */
+/* margin-right: auto; */
+/* margin: 250px auto 4em auto; */
+}
+/* must be same height as the footer */
+.footer, .footer a {
+text-align: center;
+position: relative;
+margin-top: -50px;
+/* negative value of footer height */
+height: 50px;
+clear:both;
+color: #aaaaaa;
+font-weight: 300;
+font-size: 14px;
+margin-left: auto;
+margin-right: auto;
 }
 
 
