@@ -57,7 +57,6 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
-		echo "<div class=\"wrapper\">";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
@@ -186,7 +185,6 @@ class foregroundTemplate extends BaseTemplate {
 	</div>
         <div class="push"></div>
 
-</div>
 		<footer class="row">
 
 			<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
