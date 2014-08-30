@@ -91,7 +91,18 @@ class foregroundTemplate extends BaseTemplate {
 		    		</ul>
 
 		        <ul id="top-bar-right" class="right">
-			      
+			      <!--<li class="has-form">
+		        	<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
+		        		<div class="row collapse">
+		            	<div class="small-8 columns">
+		        				<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
+		        			</div>
+		        			 <div class="small-4 columns">
+		        				<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
+		        			</div>
+		        		</div>
+		        	</form>
+		        </li>-->
 				<li class="has-form">
 					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
 						<div class="row">
@@ -138,73 +149,77 @@ class foregroundTemplate extends BaseTemplate {
 		<?php if ($wgForegroundFeatures['NavWrapperType'] != '0') echo "</div>"; ?>
 		
 		<div id="page-content">
-			<div class="row">
-					<div class="large-12 columns">
-					<!--[if lt IE 9]>
-					<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
-					<![endif]-->
-	
-					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
-					<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
+		<div class="row">
+				<div class="large-12 columns">
+				<!--[if lt IE 9]>
+				<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
+				<![endif]-->
+
+				<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
+				<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
+				</div>
+		</div>
+
+		<div id="mw-js-message" style="display:none;"></div>
+
+		<div class="row">
+				<div id="p-cactions" class="large-12 columns">
+					<?php if ($wgUser->isLoggedIn() || $wgForegroundFeatures['showActionsForAnon']): ?>
+						<a href="#" data-dropdown="drop1" class="button dropdown small secondary radius"><i class="fa fa-cog"><span class="show-for-medium-up">&nbsp;<?php echo wfMessage( 'actions' )->text() ?></span></i></a>
+						<ul id="drop1" class="views large-12 columns f-dropdown">
+							<?php foreach( $this->data['content_actions'] as $key => $item ) { echo preg_replace(array('/\sprimary="1"/','/\scontext="[a-z]+"/','/\srel="archives"/'),'',$this->makeListItem($key, $item)); } ?>
+							<?php wfRunHooks( SkinTemplateToolboxEnd, array( &$this, true ) );  ?>
+						</ul>
+						<?php if ($wgUser->isLoggedIn()): ?>
+							<div id="echo-notifications"></div>
+						<?php endif; ?>
+					<?php endif;
+					$namespace = str_replace('_', ' ', $this->getSkin()->getTitle()->getNsText());
+					$displaytitle = $this->data['title'];
+					if (!empty($namespace)) {
+						$pagetitle = $this->getSkin()->getTitle();
+						$newtitle = str_replace($namespace.':', '', $pagetitle);
+						$displaytitle = str_replace($pagetitle, $newtitle, $displaytitle);
+					?><h4 class="namespace label"><?php print $namespace; ?></h4><?php } ?>
+					<h2 class="title"><?php print $displaytitle; ?></h2>
+					<!-- <?php if ( $this->data['isarticle'] ) { ?><h3 id="tagline"><?php $this->msg( 'tagline' ) ?></h3><?php } ?> -->
+					<h5 class="subtitle"><?php $this->html('subtitle') ?></h5>
+					<div class="clear_both"></div>
+					<?php $this->html('bodytext') ?>
+		    	<div class="group"><?php $this->html('catlinks'); ?></div>
+		    	<?php $this->html('dataAfterContent'); ?>
+		    </div>
+		</div>
+
+		<footer class="row">
+
+		<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
+				<div class="social-footer large-12 small-12 columns">
+					<div class="social-links">
+					<!-- Go to www.addthis.com/dashboard to customize your tools -->
+					<div class="addthis_horizontal_follow_toolbox"></div>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<?php echo $wgForegroundFeatures['addThisFollowPUBID'];?>"></script>
 					</div>
-			</div>
+				</div>
+		<?php } ?>
 
-			<div id="mw-js-message" style="display:none;"></div>
-	
-			<div class="row">
-					<div id="p-cactions" class="large-12 columns">
-						<?php if ($wgUser->isLoggedIn() || $wgForegroundFeatures['showActionsForAnon']): ?>
-							<a href="#" data-dropdown="drop1" class="button dropdown small secondary radius"><i class="fa fa-cog"><span class="show-for-medium-up">&nbsp;<?php echo wfMessage( 'actions' )->text() ?></span></i></a>
-							<ul id="drop1" class="views large-12 columns f-dropdown">
-								<?php foreach( $this->data['content_actions'] as $key => $item ) { echo preg_replace(array('/\sprimary="1"/','/\scontext="[a-z]+"/','/\srel="archives"/'),'',$this->makeListItem($key, $item)); } ?>
-								<?php wfRunHooks( SkinTemplateToolboxEnd, array( &$this, true ) );  ?>
-							</ul>
-							<?php if ($wgUser->isLoggedIn()): ?>
-								<div id="echo-notifications"></div>
-							<?php endif; ?>
-						<?php endif;
-						$namespace = str_replace('_', ' ', $this->getSkin()->getTitle()->getNsText());
-						$displaytitle = $this->data['title'];
-						if (!empty($namespace)) {
-							$pagetitle = $this->getSkin()->getTitle();
-							$newtitle = str_replace($namespace.':', '', $pagetitle);
-							$displaytitle = str_replace($pagetitle, $newtitle, $displaytitle);
-						?><h4 class="namespace label"><?php print $namespace; ?></h4><?php } ?>
-						<h2 class="title"><?php print $displaytitle; ?></h2>
-						<!-- <?php if ( $this->data['isarticle'] ) { ?><h3 id="tagline"><?php $this->msg( 'tagline' ) ?></h3><?php } ?> -->
-						<h5 class="subtitle"><?php $this->html('subtitle') ?></h5>
-						<div class="clear_both"></div>
-						<?php $this->html('bodytext') ?>
-			    	<div class="group"><?php $this->html('catlinks'); ?></div>
-			    	<?php $this->html('dataAfterContent'); ?>
-			    </div>
-			</div>
-
-			<footer class="row">
-	
-				<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
-						<div class="social-footer large-12 small-12 columns">
-							<div class="social-links">
-							<!-- Go to www.addthis.com/dashboard to customize your tools -->
-							<div class="addthis_horizontal_follow_toolbox"></div>
-							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<?php echo $wgForegroundFeatures['addThisFollowPUBID'];?>"></script>
-							</div>
-						</div>
+		<ul class="large-12 columns">
+		<?php foreach ( $this->getFooterLinks( "flat" ) as $key ) { ?>
+			<li id="footer-<?php echo $key ?>"><?php $this->html( $key ) ?></li>
+		<?php } ?>
+<!--		</ul>
+	<ul>
+                <ul class="large-12 columns">
+-->
+                <?php foreach ( $this->getFooterIcons( "nocopyright" ) as $blockName => $footerIcons ) { ?>
+	         <li id="<?php echo $blockName ?>"><?php foreach ( $footerIcons as $icon ) { ?>
+	         <?php echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' ); ?><?php } ?></li>
 				<?php } ?>
-		
-				<ul class="large-12 columns">
-				<?php foreach ( $this->getFooterLinks( "flat" ) as $key ) { ?>
-					<li id="footer-<?php echo $key ?>"><?php $this->html( $key ) ?></li>
-				<?php } ?>
-		
-		                <?php foreach ( $this->getFooterIcons( "nocopyright" ) as $blockName => $footerIcons ) { ?>
-			         <li id="<?php echo $blockName ?>"><?php foreach ( $footerIcons as $icon ) { ?>
-			         <?php echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' ); ?><?php } ?></li>
-						<?php } ?>
-				</ul>
-			</footer>
+		</ul>
+		</footer>
 
-   </div>
+		</div>
+		
 		<?php $this->printTrail(); ?>
 
 		</body>
