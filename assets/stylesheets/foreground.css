@@ -13,13 +13,13 @@ html, body {
 	height: 100%;
 }
 
-.wrapper-page {
+.wrapper-sjwiki-page {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -5em;
 }
-.footer, .push-page {
+.footer, .push-sjwiki-page {
 	height: 5em;
 }
 
