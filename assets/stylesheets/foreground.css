@@ -3,7 +3,11 @@ body {
 }
 
 p {
-  margin-bottom: 0.25em;
+  margin-bottom: 1.25em;
+}
+
+#p-cactions{
+/*margin-top: 3em;*/
 }
 
 a.label:hover,
@@ -13,6 +17,7 @@ a.label:focus {
 
 a.label.new { background-color: #d0d0d0; }
 
+/*.button.dropdown {margin-top:3em;}*/
 a.button.dropdown { float:right;}
 
 /* Hide the page actions button for special pages (cuz there's nothing in it) */
@@ -35,18 +40,16 @@ body.action-formedit .row.hide-on-form-edit { display: none;}
   text-align: left;
 }
 
+.catlinks { 
+padding-top:0.75em;
+}
+
 /* Make sure top bar is even more z-indx! */
 #toolbox-dropdown {
   z-index: 10000000;
 }
 #personal-tools-dropdown {
   z-index: 10000000;
-}
-
-/* Dropdown Icon Alignment */
-div.drop-icon {
-  display: inline;
-  margin-right: 4px;
 }
 
 td.mw-submit a,
@@ -67,7 +70,7 @@ small {
 }
 
 h4.namespace.label {
-  font-size: small;
+/*  font-size: small;*/
   display:inline-block;
 }
 
@@ -80,6 +83,8 @@ h2 span {
 }
 
 h2.title {
+  font-size: 1.75em;
+  margin-top: 2em;
   margin-bottom: 0.1em;
 }
 
@@ -119,47 +124,21 @@ div.small-9.columns textarea {
 }
 
 footer.row {
-  margin-top: 2em;
-  color: grey;
-}
+  margin:auto;
+  margin-top: 5em;
 
-div {
-  line-height: 1.60em;
-}
-
-
-/* NOTICES, ALERTS, WARNINGS */
-div#userloginprompt, p#userloginlink {
+  text-align: center;
   font-size: 80%;
+  color: grey;
+  width: 80%;
 
-}
 
+ /*  position:absolute;
+   bottom:0;
+   */
+   height:20em; 
+ 
 
-/* LISTS */
-
-ul#drop1.f-dropdown {
-  margin-left:0;
-  margin-top:.5em;
-  margin-bottom:.25em;
-  padding:.25em;
-}
-
-#mw-content-text ul {
-  margin: .5em 1.25em;
-}
-
-footer.row ul {
-  list-style-type: none;
-  margin: 0 0 1em 0;
-}
-
-footer.row ul.views.columns li {
-  margin-right: 1em;
-}
-
-#footer footer.row ul {
-margin: 0;
-list-style-type: none;
 }
 
 /* Make social footer center need overflow:hidden and other div classes */
@@ -187,50 +166,66 @@ z-index: 100000;
 }
 /* end social footer classes */
 
-#footer-left {
-font-size: 90%;
-text-align: left;
-}
-#footer-right-icons {
-font-size: 85%;
-text-align: center;
+div {
+  line-height: 1.60em;
 }
 
-#footer-right-icons li {
-display: inline-block;
-text-align: center;
-margin: 0 0 .5em .5em;
+
+/* NOTICES, ALERTS, WARNINGS */
+div#userloginprompt, p#userloginlink {
+  font-size: 80%;
+
 }
 
-li#footer-privacy {
-float: left;
-margin-right: 2em;
+
+/* LISTS */
+
+ul#drop1.f-dropdown {
+  margin-left:0;
+  margin-top:.5em;
+  margin-bottom:.25em;
+  padding:.25em;
 }
 
-li#footer-about {
-float: left;
-margin-right: 2em;
+#mw-content-text ul {
+  margin: .5em 1.25em;
 }
 
-li#footer-disclaimer {
-float: left;
-margin-right: 2em;
+footer.row ul {
+ display:inline;
+  list-style-type: none;
+  margin: .5em 1.25em;
+ 
 }
 
-.text-center #footer-left li {
-float: none;
-margin: 0;
+li.poweredby {
+
+padding:0;
+margin:0;
 }
-.text-center #footer-left {
-text-align: center;
+li#footer-mobileview
+{
+padding:0;
+padding-top:0.75em;
+display:block;
+margin:0;
+}
+li#poweredby {
+display:block;
+padding-top:0.75em;
+}
+li#footer-copyright {
+display:block;
 }
 
-@media only screen and (max-width: 768px) {
-#footer-left { font-size: 85%; text-align: center;}
-#footer-right-icons { font-size: 80%;}
-li#footer-privacy { float: none; margin-right: 0;}
-li#footer-about { float: none; margin-right: 0;}
-li#footer-disclaimer { float: none; margin-right: 0;}
+
+footer.row li {
+ padding-left:0.5em;
+ padding-right:0.5em;
+}
+
+footer.row ul.views.columns li {
+  margin-right: 1em;
 }
 
 .columns ul.special li {
@@ -265,13 +260,26 @@ footer.row ul.columns li { display: inline;float:none;}
   color: white;
 }
 
+a.new {
+  color: #BA0000;
+}
+a.new:hover {
+color: #ff3333;
+}
+
+
 ul.vcard { padding: 0.5em 0.5em 0.55em 0.5em; }
 
 /* HEADERS */
 
 h1,h2,h3,h4,h5,h6 {
-  margin-top: 0em;
+  margin-top: 0.8em;
   line-height: 1em;
+}
+
+h5.subtitle {
+	font-size: 0.75em;
+	padding-bottom: 1em;
 }
 
 .page-Special_SpecialPages h2 {
@@ -349,6 +357,7 @@ table.formtable th {
 td.smwpropname, th.smwpropname, td.smwspecname {
   text-align:left;
 }
+
 
 table tbody tr td, table tr td {
   line-height: 1.6em;
@@ -503,25 +512,31 @@ button, .button {
   padding: 0.3em 0.75em 0.4em 0.75em;
 }
 
-.top-bar .button.search {
-  top: 0px;
-}
+/*.top-bar .button.search {
+  top: 1px;
+  text-align: left;
+}/*
 
 .top-bar .button.search {
+  top: 0px;
+  position:static;
   margin-left: 10px;
 }
+
+
 
 .top-bar-section .has-form {
   padding: 0 5px;
 }
 
 .top-bar input {
-  top: 0px;
+position:static; 
+ top: 0px;
 }
 
 @media only screen and (min-width: 768px) {
 .top-bar .button.search {
-  top: 1px; }
+  top: 0px; }
 .top-bar .button.search {
   margin-left: -4px; }
 }
@@ -811,4 +826,60 @@ body.mw-special-Userlogin h2.title {
 #echo-notifications .mw-echo-overlay { left: -420px; width: 450px; }
 #echo-notifications #mw-echo-overlay-pref-link { padding: 10px 0 10px 30px; }
 #echo-notifications #mw-echo-overlay-link { border-right: 1px solid #DDDDDD; margin-right: 2em; }
+}
+
+div.tright {
+
+padding-left:1em;
+}
+div.tleft {
+padding-right:1em;
+}
+
+div.thumbcaption{
+ font-size: 0.8em;
+ padding-bottom: 1.25em;
+}
+
+
+
+/* Don't like the black top bar? Change the color here:
+.top-bar,
+.top-bar-section li a:not(.button),
+.top-bar-section ul li.active > a,
+.top-bar-section .has-form {
+   background: black;
+   color: white;
+}
+
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+  border-color: black;
+}*/
+
+
+
+/* Custom Foreground menubar colors */
+.top-bar,
+.top-bar-section ul,
+.top-bar-section ul li.active > a,
+.top-bar-section li a:not(.button),
+.top-bar-section .has-form {
+   background: #000000;
+   color: #ffffff;
+}
+
+.top-bar-section > ul > .divider,
+.top-bar-section > ul > [role="separator"] {
+  border-color: #000000;
+}
+
+/* Darker color for the hover over items */
+.top-bar-section ul li.hover > a,
+.top-bar-section ul li ul.dropdown li.hover > a{
+    background: #222222;
+}
+
+/* Slightly darker color for the dropdowns */
+.top-bar-section ul li ul.dropdown li > a {
+    background: #444444;
 }

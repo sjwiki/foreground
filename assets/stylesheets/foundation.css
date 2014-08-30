@@ -132,7 +132,7 @@ select {
   position: relative;
   padding-left: 0.9375em;
   padding-right: 0.9375em;
-  width: 100%;
+  width: auto;
   float: left; }
 
 @media only screen {
@@ -1038,11 +1038,13 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #2ba6cb;
+  color: #003399;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #2795b6; }
+    color: #3399cc;
+    text-decoration: underline;
+  }
   a img {
     border: none; }
 
@@ -1075,10 +1077,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125em; }
+  font-size: 2em; }
 
 h2 {
-  font-size: 1.6875em; }
+  font-size: 1.5em; }
 
 h3 {
   font-size: 1.375em; }
@@ -1222,16 +1224,16 @@ blockquote p {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.75em; }
+    font-size: 2em; }
 
   h2 {
-    font-size: 2.3125em; }
+    font-size: 1.5em; }
 
   h3 {
-    font-size: 1.6875em; }
+    font-size: 1.25em; }
 
   h4 {
-    font-size: 1.4375em; } }
+    font-size: 1em; } }
 /*
  * Print styles.
  *
@@ -1321,11 +1323,11 @@ button, .button, .multipleTemplateAdder {
   padding-bottom: 0.8125em;
   padding-left: 1.5em;
   font-size: 1em;
-  background-color: #2ba6cb;
-  border-color: #2284a1;
+  background-color: #a42161;
+  border-color: #7A1E3D;
   color: white; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #2284a1; }
+    background-color: #EB308B; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: white; }
   button.secondary, .button.secondary {
@@ -2643,10 +2645,15 @@ form.custom {
   .top-bar .button {
     padding-top: .5em;
     padding-bottom: .5em;
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+    top:1px;
+   }
   .top-bar .title-area {
     position: relative;
     margin: 0; }
+.top-bar a:hover {
+text-decoration:none;
+}
   .top-bar .name {
     height: 45px;
     margin: 0;
@@ -2699,7 +2706,7 @@ form.custom {
     height: auto;
     background: transparent; }
     .top-bar.expanded .title-area {
-      background: #111111; }
+      background: #000000; }
     .top-bar.expanded .toggle-topbar a {
       color: #888888; }
       .top-bar.expanded .toggle-topbar a span {
@@ -2717,7 +2724,7 @@ form.custom {
     width: 100%;
     height: auto;
     display: block;
-    background: #222222;
+    background: #000000;
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
@@ -2735,9 +2742,9 @@ form.custom {
     padding-left: 15px;
     font-size: 0.8125em;
     font-weight: bold;
-    background: #222222; }
+    background: #000000; }
     .top-bar-section ul li > a.hover {
-      background: #090909;
+      background: #000000;
       color: white; }
     .top-bar-section ul li > a.button {
       background: #2ba6cb;
@@ -2815,7 +2822,7 @@ form.custom {
 
 @media only screen and (min-width: 58.75em) {
   .top-bar {
-    background: #111111;
+    background: #000000;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -2835,10 +2842,10 @@ form.custom {
       font-size: 0.875em;
       height: 2em;
       padding: 0 10px;
-      position: relative;
-      top: 8px; }
+    /*  position: relative;
+      top: 8px;*/ }
     .top-bar.expanded {
-      background: #111111; }
+      background: #000000; }
 
   .contain-to-grid .top-bar {
     max-width: 62.5em;
@@ -2860,7 +2867,7 @@ form.custom {
     .top-bar-section li a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #111111; }
+      background: #000000; }
       .top-bar-section li a:not(.button).hover {
         background: black; }
     .top-bar-section .has-dropdown > a {
@@ -2912,7 +2919,7 @@ form.custom {
       height: 45px;
       width: 0px; }
     .top-bar-section .has-form {
-      background: #111111;
+      background: #000000;
       padding: 0 15px;
       height: 45px; }
     .top-bar-section ul.right li .dropdown {
@@ -3632,7 +3639,7 @@ kbd {
   position: relative;
   padding: 0.1875em 0.625em 0.25em;
   font-size: 0.875em;
-  background-color: #2ba6cb;
+  background-color: #EB308B;
   color: white; }
   .label.radius {
     -webkit-border-radius: 3px;
@@ -3711,7 +3718,9 @@ kbd {
   border-color: #d9d9d9;
   margin-bottom: 1.25em;
   padding: 1.25em;
-  background: #f2f2f2; }
+  background: #f2f2f2; 
+  margin-top:1em;
+  }
   .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
     color: #333333; }
   .panel > :first-child {
@@ -4077,6 +4086,7 @@ table {
   table tfoot tr td {
     display: table-cell;
     line-height: 1.125em; }
+
 
 /* Image Thumbnails */
 .th {
