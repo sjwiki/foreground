@@ -99,9 +99,10 @@ class foregroundTemplate extends BaseTemplate {
 				<li class="has-form">
 					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
 						<div class="row">
-						<div class="small-12 columns">
-							<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
-							<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
+							<div class="small-12 columns">
+								<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
+								<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
+							</div>
 						</div>
 						</form>
 				</li>
@@ -145,12 +146,12 @@ class foregroundTemplate extends BaseTemplate {
 
 		<div class="row">
 				<div class="large-12 columns">
-				<!--[if lt IE 9]>
-				<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
-				<![endif]-->
-
-				<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
-				<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
+					<!--[if lt IE 9]>
+					<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
+					<![endif]-->
+	
+					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
+					<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
 				</div>
 		</div>
 
