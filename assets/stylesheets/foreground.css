@@ -13,31 +13,26 @@ body {
 min-height: 100%;
 height: auto !important;
 height: 100%;
-max-width: 58em;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: -50px;
-/* margin: 250px auto 4em auto; */
-/* margin: 250px auto 4em auto; */
+
+margin-bottom: -5em;
+
 }
 #main {
 overflow:auto;
-padding-bottom: 50px;
+padding-bottom: 5em;
 /* margin-left: auto; */
 /* margin-right: auto; */
 /* margin: 250px auto 4em auto; */
 }
 /* must be same height as the footer */
-.footer, .footer a {
+.footer {
 text-align: center;
 position: relative;
-margin-top: -50px;
+margin-top: -5em;
 /* negative value of footer height */
-height: 50px;
+height: 5em;
 clear:both;
-color: #aaaaaa;
-font-weight: 300;
-font-size: 14px;
+
 margin-left: auto;
 margin-right: auto;
 }
