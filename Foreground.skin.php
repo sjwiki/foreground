@@ -187,7 +187,7 @@ class foregroundTemplate extends BaseTemplate {
 		</div>
 	</div></div> <!-- end of wrpapper -->		
 
-	<footer class="row" id="footer">
+	<footer class="row">
 
 		<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
 				<div class="social-footer large-12 small-12 columns">
