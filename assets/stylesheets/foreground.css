@@ -1,35 +1,12 @@
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
 body {
   line-height: 1.6em;
 }
-
-
-div#wrap {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	
-	margin-bottom: -5em;
-
-}
-#main {
-	overflow:auto;
-	padding-bottom: 5em;
-
-}
-
-
 
 p {
   margin-bottom: 1.25em;
 }
 
-#p-cactions {
+#p-cactions{
 /*margin-top: 3em;*/
 }
 
@@ -151,11 +128,10 @@ footer.row {
   text-align: center;
   font-size: 80%;
   width: 80%;
-  /* margin-top: -10em; */
-  /* negative value of footer height */
+/*  margin-top: -10em;
+   negative value of footer height */
   height: 5em;
 }
-
 
 /* Make social footer center need overflow:hidden and other div classes */
 .social-footer {
@@ -236,13 +212,15 @@ display:block;
 
 
 footer.row li {
- padding-left:0.5em;
+/* padding-left:0.5em;*/
  padding-right:0.5em;
 }
 
 footer.row ul.views.columns li {
   margin-right: 1em;
 }
+
+
 
 .columns ul.special li {
   float:none;
@@ -291,7 +269,6 @@ ul.vcard { padding: 0.5em 0.5em 0.55em 0.5em; }
 h1,h2,h3,h4,h5,h6 {
   margin-top: 0.8em;
   line-height: 1em;
-  margin-bottom:1em;
 }
 
 h5.subtitle {
