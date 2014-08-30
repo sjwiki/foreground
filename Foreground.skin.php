@@ -57,7 +57,7 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
-		echo "<div class='wrapper-sjwiki-page'>";
+		echo "<div id='wrapper-sjwiki-page'>";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
@@ -184,7 +184,7 @@ class foregroundTemplate extends BaseTemplate {
 				 </div>
 		</div>
 	</div>
-        <div class="push-sjwiki-page"></div>
+        <div id="push-sjwiki-page"></div>
 </div>
 		<footer class="row">
 
