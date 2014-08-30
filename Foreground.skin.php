@@ -50,7 +50,11 @@ class Skinforeground extends SkinTemplate {
 	}
 
 }
+?>
 
+<div id="container"> <!-- whole page wrapper -->
+
+<?php
 class foregroundTemplate extends BaseTemplate {
 	public function execute() {
 		global $wgUser;
@@ -148,7 +152,9 @@ class foregroundTemplate extends BaseTemplate {
 		</nav>
 		<?php if ($wgForegroundFeatures['NavWrapperType'] != '0') echo "</div>"; ?>
 		
-		<div id="page-content">
+		<div id="page-content"> <!-- developers added this but SJWiki's footer forced to bottom needs something else, will leave in but completely ignore-->
+		<div id="body"> <!-- this is for our use, we need to exclude footer -->
+
 		<div class="row">
 				<div class="large-12 columns">
 				<!--[if lt IE 9]>
@@ -190,7 +196,8 @@ class foregroundTemplate extends BaseTemplate {
 		    	<?php $this->html('dataAfterContent'); ?>
 		    </div>
 		</div>
-
+		</div>
+		<div id="footer">
 		<footer class="row">
 
 		<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
@@ -217,9 +224,10 @@ class foregroundTemplate extends BaseTemplate {
 				<?php } ?>
 		</ul>
 		</footer>
+		</div>
 
 		</div>
-		
+</div> <!-- end of whole page wrpapper -->		
 		<?php $this->printTrail(); ?>
 
 		</body>
