@@ -57,6 +57,7 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
+		echo "<div class=\"wrapper\">";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
@@ -64,7 +65,7 @@ class foregroundTemplate extends BaseTemplate {
 				echo "<div id='navwrapper'>";
 				break;
 			default:
-				echo "<div class=\"wrapper\"><div id='navwrapper' class='". $wgForegroundFeatures['NavWrapperType']. "'>";
+				echo "<div id='navwrapper' class='". $wgForegroundFeatures['NavWrapperType']. "'>";
 				break;
 		}
 ?>
@@ -136,21 +137,23 @@ class foregroundTemplate extends BaseTemplate {
 		       </ul>
 		     </section>
 		</nav>
+		
+		
 		<?php if ($wgForegroundFeatures['NavWrapperType'] != '0') echo "</div>"; ?>
 		
 		<div id="page-content">
-		<div class="row">
-				<div class="large-12 columns">
-				<!--[if lt IE 9]>
-				<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
-				<![endif]-->
+			<div class="row">
+					<div class="large-12 columns">
+					<!--[if lt IE 9]>
+					<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
+					<![endif]-->
+	
+					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
+					<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
+					</div>
+			</div>
 
-				<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
-				<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
-				</div>
-		</div>
-
-		<div id="mw-js-message" style="display:none;"></div>
+			<div id="mw-js-message" style="display:none;"></div>
 
 		<div class="row">
 				<div id="p-cactions" class="large-12 columns">
@@ -176,40 +179,37 @@ class foregroundTemplate extends BaseTemplate {
 					<!-- <h5 class="subtitle"><?php $this->html('subtitle') ?></h5>-->
 					<div class="clear_both"></div>
 					<?php $this->html('bodytext') ?>
-		    	<div class="group"><?php $this->html('catlinks'); ?></div>
-		    	<?php $this->html('dataAfterContent'); ?>
-		    </div>
+		    			<div class="group"><?php $this->html('catlinks'); ?></div>
+		    			<?php $this->html('dataAfterContent'); ?>
+				 </div>
 		</div>
 	</div>
+</div>
 		<footer class="row">
 
-		<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
-				<div class="social-footer large-12 small-12 columns">
-					<div class="social-links">
-					<!-- Go to www.addthis.com/dashboard to customize your tools -->
-					<div class="addthis_horizontal_follow_toolbox"></div>
-					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<?php echo $wgForegroundFeatures['addThisFollowPUBID'];?>"></script>
+			<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
+					<div class="social-footer large-12 small-12 columns">
+						<div class="social-links">
+						<!-- Go to www.addthis.com/dashboard to customize your tools -->
+						<div class="addthis_horizontal_follow_toolbox"></div>
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<?php echo $wgForegroundFeatures['addThisFollowPUBID'];?>"></script>
+						</div>
 					</div>
-				</div>
-		<?php } ?>
-
-		<ul class="large-12 columns">
-		<?php foreach ( $this->getFooterLinks( "flat" ) as $key ) { ?>
-			<li id="footer-<?php echo $key ?>"><?php $this->html( $key ) ?></li>
-		<?php } ?>
-<!--		</ul>
-	<ul>
-                <ul class="large-12 columns">
--->
-                <?php foreach ( $this->getFooterIcons( "nocopyright" ) as $blockName => $footerIcons ) { ?>
-	         <li id="<?php echo $blockName ?>"><?php foreach ( $footerIcons as $icon ) { ?>
-	         <?php echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' ); ?><?php } ?></li>
-				<?php } ?>
-		</ul>
+			<?php } ?>
+	
+			<ul class="large-12 columns">
+			<?php foreach ( $this->getFooterLinks( "flat" ) as $key ) { ?>
+				<li id="footer-<?php echo $key ?>"><?php $this->html( $key ) ?></li>
+			<?php } ?>
+	
+	                <?php foreach ( $this->getFooterIcons( "nocopyright" ) as $blockName => $footerIcons ) { ?>
+		         <li id="<?php echo $blockName ?>"><?php foreach ( $footerIcons as $icon ) { ?>
+		         <?php echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' ); ?><?php } ?></li>
+					<?php } ?>
+			</ul>
 		</footer>
 
-		</div>
-		
+
 		<?php $this->printTrail(); ?>
 
 		</body>
