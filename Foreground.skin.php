@@ -69,6 +69,7 @@ class foregroundTemplate extends BaseTemplate {
 		}
 ?>
 <!-- START FOREGROUNDTEMPLATE -->
+  <div id="container">
 		<nav class="top-bar">
 						<ul class="title-area">
 							<li class="name"><h1><a href="<?php echo $this->data['nav_urls']['mainpage']['href']; ?>"><?php echo $this->text('sitename'); ?></a></h1></li>
@@ -91,18 +92,7 @@ class foregroundTemplate extends BaseTemplate {
 		    		</ul>
 
 		        <ul id="top-bar-right" class="right">
-			      <!--<li class="has-form">
-		        	<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
-		        		<div class="row collapse">
-		            	<div class="small-8 columns">
-		        				<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
-		        			</div>
-		        			 <div class="small-4 columns">
-		        				<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
-		        			</div>
-		        		</div>
-		        	</form>
-		        </li>-->
+			      
 				<li class="has-form">
 					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
 						<div class="row">
@@ -207,10 +197,7 @@ class foregroundTemplate extends BaseTemplate {
 		<?php foreach ( $this->getFooterLinks( "flat" ) as $key ) { ?>
 			<li id="footer-<?php echo $key ?>"><?php $this->html( $key ) ?></li>
 		<?php } ?>
-<!--		</ul>
-	<ul>
-                <ul class="large-12 columns">
--->
+
                 <?php foreach ( $this->getFooterIcons( "nocopyright" ) as $blockName => $footerIcons ) { ?>
 	         <li id="<?php echo $blockName ?>"><?php foreach ( $footerIcons as $icon ) { ?>
 	         <?php echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' ); ?><?php } ?></li>
@@ -219,7 +206,7 @@ class foregroundTemplate extends BaseTemplate {
 		</footer>
 
 		</div>
-		
+   </div>
 		<?php $this->printTrail(); ?>
 
 		</body>
