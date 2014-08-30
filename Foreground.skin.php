@@ -52,7 +52,6 @@ class Skinforeground extends SkinTemplate {
 }
 ?>
 
-<div id="container"> <!-- whole page wrapper -->
 
 <?php
 class foregroundTemplate extends BaseTemplate {
@@ -61,6 +60,7 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
+		echo "<div id="container">";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
