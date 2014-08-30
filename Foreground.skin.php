@@ -60,7 +60,7 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
-		echo "<div id="container">";
+		echo "<div id='container'>";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
