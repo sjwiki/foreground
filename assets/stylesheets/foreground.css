@@ -888,10 +888,7 @@ div.thumbcaption{
 .top-bar-section ul li ul.dropdown li > a {
     background: #444444;
 }
-#container {
-   min-height:100%;
-   position:relative;
-}
+
 #page-content {
    padding-bottom:  20em;  /* Height of the footer */
 }
