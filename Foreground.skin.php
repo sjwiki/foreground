@@ -64,7 +64,7 @@ class foregroundTemplate extends BaseTemplate {
 				echo "<div id='navwrapper'>";
 				break;
 			default:
-				echo "<div id='navwrapper' class='". $wgForegroundFeatures['NavWrapperType']. "'>";
+				echo "<div class=\"wrapper\"><div id='navwrapper' class='". $wgForegroundFeatures['NavWrapperType']. "'>";
 				break;
 		}
 ?>
@@ -180,7 +180,7 @@ class foregroundTemplate extends BaseTemplate {
 		    	<?php $this->html('dataAfterContent'); ?>
 		    </div>
 		</div>
-
+	</div>
 		<footer class="row">
 
 		<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
