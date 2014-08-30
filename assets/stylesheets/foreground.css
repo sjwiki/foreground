@@ -9,12 +9,12 @@ body {
 body {
   line-height: 1.6em;
 }
-#container {
+div#container {
    min-height:100%;
    position:relative;
 }
 
-#body {
+div#body {
    padding-bottom:20em;   /* Height of the footer */
 }
 
