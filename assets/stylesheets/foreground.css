@@ -15,7 +15,7 @@ div#container {
 }
 
 div#body {
-   padding-bottom:20em;   /* Height of the footer */
+   padding-bottom:5em;   /* Height of the footer */
 }
 
 
@@ -149,7 +149,7 @@ footer.row {
   width: 80%;
    position:absolute;
    bottom:0;
-   height:20em; 
+   height:5em; 
 
  
 
