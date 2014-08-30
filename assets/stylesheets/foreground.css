@@ -23,7 +23,7 @@ body {
 
 }
 /* must be same height as the footer */
-.footer {
+#footer {
 	text-align: center;
 	position: relative;
 	margin-top: -5em;
