@@ -12,13 +12,14 @@ p {
 html, body {
 	height: 100%;
 }
-.wrapper {
+
+.wrapper-page {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -5em;
 }
-.push {
+.footer, .push-page {
 	height: 5em;
 }
 
