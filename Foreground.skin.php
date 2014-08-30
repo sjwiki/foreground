@@ -60,7 +60,7 @@ class foregroundTemplate extends BaseTemplate {
 		global $wgForegroundFeatures;
 		wfSuppressWarnings();
 		$this->html('headelement');
-		echo "<div id='wrap'>";
+		echo "<div id='wrap'><div id ='main'>";
 		switch ($wgForegroundFeatures['NavWrapperType']) {
 			case '0':
 				break;
@@ -195,7 +195,7 @@ class foregroundTemplate extends BaseTemplate {
 	    			<?php $this->html('dataAfterContent'); ?>
 	    		</div>
 		</div>
-	</div> <!-- end of wrpapper -->		
+	</div></div> <!-- end of wrpapper -->		
 
 	<footer class="row" class="footer">
 
