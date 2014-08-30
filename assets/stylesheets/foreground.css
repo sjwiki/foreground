@@ -1,6 +1,23 @@
+
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
 body {
   line-height: 1.6em;
 }
+#container {
+   min-height:100%;
+   position:relative;
+}
+
+#body {
+   padding-bottom:20em;   /* Height of the footer */
+}
+
 
 p {
   margin-bottom: 1.25em;
@@ -129,14 +146,11 @@ footer.row {
 
   text-align: center;
   font-size: 80%;
-  color: grey;
   width: 80%;
-
-
- /*  position:absolute;
+   position:absolute;
    bottom:0;
-   */
    height:20em; 
+
  
 
 }
