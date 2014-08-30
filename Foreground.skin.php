@@ -95,18 +95,7 @@ class foregroundTemplate extends BaseTemplate {
 	    		</ul>
 
 		        <ul id="top-bar-right" class="right">
-			      <!--<li class="has-form">
-		        	<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
-		        		<div class="row collapse">
-		            	<div class="small-8 columns">
-		        				<?php echo $this->makeSearchInput(array('placeholder' => wfMessage('searchsuggest-search')->text(), 'id' => 'searchInput') ); ?>
-		        			</div>
-		        			 <div class="small-4 columns">
-		        				<button type="submit" class="button search"><?php echo wfMessage( 'search' )->text() ?></button>
-		        			</div>
-		        		</div>
-		        	</form>
-		        </li>-->
+
 				<li class="has-form">
 					<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
 						<div class="row">
