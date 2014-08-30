@@ -22,18 +22,7 @@ body {
 	padding-bottom: 5em;
 
 }
-/* must be same height as the footer */
-#footer {
-	text-align: center;
-	position: relative;
-	margin-top: -5em;
-	/* negative value of footer height */
-	height: 5em;
-	clear:both;
-	
-	margin-left: auto;
-	margin-right: auto;
-}
+
 
 
 p {
@@ -158,24 +147,16 @@ div.small-9.columns textarea {
 }
 
 footer.row {
-  margin:auto;
-
+  padding-top:5em;
   text-align: center;
   font-size: 80%;
   width: 80%;
-   position:absolute;
-   bottom:0;
-
-   	text-align: center;
-	position: relative;
-	margin-top: -5em;
-	/* negative value of footer height */
-	height: 5em;
-	clear:both;
-	
-	margin-left: auto;
-	margin-right: auto;
+  /* margin-top: -10em; */
+  /* negative value of footer height */
+  height: 5em;
 }
+
+
 /* Make social footer center need overflow:hidden and other div classes */
 .social-footer {
 margin: 0 0 1em;
