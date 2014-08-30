@@ -184,6 +184,8 @@ class foregroundTemplate extends BaseTemplate {
 				 </div>
 		</div>
 	</div>
+        <div class="push"></div>
+
 </div>
 		<footer class="row">
 
