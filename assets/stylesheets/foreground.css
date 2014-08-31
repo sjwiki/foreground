@@ -6,23 +6,6 @@ p {
   margin-bottom: 1.25em;
 }
 
-* {
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
-
-#wrapper-sjwiki-page {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -5em;
-}
-.footer, #push-sjwiki-page {
-	height: 5em;
-}
-
 #p-cactions{
 /*margin-top: 3em;*/
 }
@@ -102,7 +85,7 @@ h2 span {
 h2.title {
   font-size: 1.75em;
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 0.1em;
 }
 
 h3#tagline {
@@ -141,10 +124,21 @@ div.small-9.columns textarea {
 }
 
 footer.row {
+  margin:auto;
+  margin-top: 5em;
+
   text-align: center;
   font-size: 80%;
+  color: grey;
   width: 80%;
-  height: 5em;
+
+
+ /*  position:absolute;
+   bottom:0;
+   */
+   height:20em; 
+ 
+
 }
 
 /* Make social footer center need overflow:hidden and other div classes */
@@ -226,15 +220,13 @@ display:block;
 
 
 footer.row li {
-/* padding-left:0.5em;*/
+ padding-left:0.5em;
  padding-right:0.5em;
 }
 
 footer.row ul.views.columns li {
   margin-right: 1em;
 }
-
-
 
 .columns ul.special li {
   float:none;
@@ -309,7 +301,7 @@ h3 {
 .ns-special h3,
 .page-Main_Page h3 {
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 2em;
 }
 
 p.title {
