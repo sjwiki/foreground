@@ -893,3 +893,9 @@ div.thumbcaption{
 .top-bar-section ul li ul.dropdown li > a {
     background: #444444;
 }
+
+.mw-ui-button.mw-ui-progressive	{
+	margin-bottom: 1em;
+}
+
+
