@@ -95,7 +95,7 @@ h2 span {
 h2.title {
   font-size: 1.75em;
   margin-top: 2em;
-  margin-bottom: 0.1em;
+  margin-bottom: 1.25em;
 }
 
 h3#tagline {
@@ -134,22 +134,50 @@ div.small-9.columns textarea {
 }
 
 footer.row {
-  margin:auto;
-  margin-top: 5em;
-
-  text-align: center;
-  font-size: 80%;
-  color: grey;
-  width: 80%;
-
-
- /*  position:absolute;
-   bottom:0;
-   */
-   height:20em; 
- 
-
+color: #555555;
+text-align: center;
+font-size:80%;
+background: #eeeeee;
+max-width: 100%;
+margin: 5em 0 0 0;
+padding: 1em;
 }
+
+footer.row a {
+color: #222;
+}
+
+footer.row a:hover {
+color: #444;
+}
+
+
+.at300bs {
+        -webkit-transition: opacity 0.4s linear;opacity: 1;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;transition: all 0.4s ease-out;
+    filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+filter: gray; /* IE6+ */
+filter: grayscale(100%); /* Current draft standard */
+-webkit-filter: grayscale(100%); /* New WebKit */
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%); 
+-o-filter: grayscale(100%);
+}
+
+.at300bs:hover  {
+            -webkit-transition: opacity 0.4s linear;opacity: 1;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;transition: all 0.4s ease-out;
+    
+    filter: none; /* Firefox 3.5+ */
+filter: grayscale(0); /* Current draft standard */
+-webkit-filter: grayscale(0); /* New WebKit */
+-moz-filter: grayscale(0);
+-ms-filter: grayscale(0); 
+-o-filter: grayscale(0);
+    }
+
 
 /* Make social footer center need overflow:hidden and other div classes */
 .social-footer {
@@ -231,7 +259,8 @@ display:block;
 
 footer.row li {
  padding-left:0.5em;
- padding-right:0.5em;
+ padding-right:0em;
+ display: inline;
 }
 
 footer.row ul.views.columns li {
@@ -268,14 +297,29 @@ footer.row ul.columns li { display: inline;float:none;}
 
 #mw-normal-catlinks a.new {
   color: white;
+
 }
 
-a.new {
-  color: #BA0000;
+a:active, a:focus {
+    outline: 0; 
+    }
+div#page-content a, a:link {
+
+    -webkit-transition: opacity 0.4s linear;opacity: 1;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;transition: all 0.4s ease-out;
 }
+
+
+a.new, a.new:link {
+  color: #BA0000;
+    }
+
 a.new:hover {
 color: #ff3333;
+
 }
+
 
 
 ul.vcard { padding: 0.5em 0.5em 0.55em 0.5em; }
@@ -843,7 +887,10 @@ padding-right:1em;
 
 div.thumbcaption{
  font-size: 0.8em;
- padding-bottom: 1.25em;
+ padding: 0.2em;
+ padding-top: 0.75em;
+ padding-bottom: 1em;
+ margin-bottom: 0.1em;
 }
 
 
@@ -894,3 +941,8 @@ div.thumbcaption{
 }
 
 
+div.thumbinner {
+background-color: #eeeeee;
+padding: 0.2em;
+display: inline-block;
+}
