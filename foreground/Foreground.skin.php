@@ -164,7 +164,8 @@ class foregroundTemplate extends BaseTemplate {
 		</nav>
 		<?php if ($wgForegroundFeatures['NavWrapperType'] != '0') echo "</div>"; ?>
 		
-		<div id="page-content">
+		<div id="wrap">
+		<!--<div id="page-content">-->
 		<div class="row">
 				<div class="large-12 columns">
 				<!--[if lt IE 9]>
@@ -178,7 +179,7 @@ class foregroundTemplate extends BaseTemplate {
 
 		<div id="mw-js-message" style="display:none;"></div>
 
-		<div class="row">
+		<div id ="main" class="row">
 				<div id="p-cactions" class="large-12 columns">
 					<?php if ($wgUser->isLoggedIn() || $wgForegroundFeatures['showActionsForAnon']): ?>
 						<a href="#" data-dropdown="drop1" class="button dropdown small secondary radius"><i class="fa fa-cog"><span class="show-for-medium-up">&nbsp;<?php echo wfMessage( 'actions' )->text() ?></span></i></a>
@@ -210,6 +211,7 @@ class foregroundTemplate extends BaseTemplate {
 		    </div>
 		</div>
 
+	</div> <!-- closing tag of wrap -->
 			<footer class="row">
 				<div id="footer">
 					<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
@@ -241,7 +243,7 @@ class foregroundTemplate extends BaseTemplate {
 				</div>
 			</footer>
 
-		</div>
+		<!-- closing tag of page-content </div>-->
 		
 		<?php $this->printTrail(); ?>
 
