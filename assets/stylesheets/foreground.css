@@ -139,8 +139,15 @@ text-align: center;
 font-size:80%;
 background: #eeeeee;
 max-width: 100%;
-margin: 5em 0 0 0;
+margin: 0;
+
 padding: 1em;
+
+	position: relative;
+	margin-top: -18em; /* negative value of footer height */
+	height: 18em;
+	clear:both;
+
 }
 
 footer.row a {
@@ -157,9 +164,9 @@ color: #444;
     -webkit-transition: all 0.4s ease-out;
     -moz-transition: all 0.4s ease-out;transition: all 0.4s ease-out;
     filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-filter: gray; /* IE6+ */
-filter: grayscale(100%); /* Current draft standard */
--webkit-filter: grayscale(100%); /* New WebKit */
+	filter: gray; /* IE6+ */
+	filter: grayscale(100%); /* Current draft standard */
+	-webkit-filter: grayscale(100%); /* New WebKit */
 -moz-filter: grayscale(100%);
 -ms-filter: grayscale(100%); 
 -o-filter: grayscale(100%);
@@ -232,7 +239,7 @@ ul#drop1.f-dropdown {
 footer.row ul {
  display:inline;
   list-style-type: none;
-  margin: .5em 1.25em;
+/*  margin: .5em 1.25em;*/
  
 }
 
@@ -258,8 +265,8 @@ display:block;
 
 
 footer.row li {
- padding-left:0.5em;
- padding-right:0em;
+ padding-left:0;
+ padding-right:1em;
  display: inline;
 }
 
@@ -572,7 +579,7 @@ button, .button {
 }
 
 .top-bar .button.search {
-  margin-left: 10px;
+  margin-left: -4px;
 }
 
 .top-bar-section .has-form {
@@ -589,6 +596,9 @@ button, .button {
 .top-bar .button.search {
   margin-left: -4px; }
 }
+
+
+
 
 .top-bar-section .dropdown {
   z-index: 100;
@@ -940,9 +950,50 @@ div.thumbcaption{
 	margin-bottom: 1em;
 }
 
-
 div.thumbinner {
 background-color: #eeeeee;
 padding: 0.2em;
 display: inline-block;
 }
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%; padding-top:2em;}
+
+#main {overflow:auto;
+	padding-bottom: 18em;}  /* must be same height as the footer */
+
+@media screen and (max-width: 768px) {
+	#main {
+		padding-bottom: 20em;
+	}
+
+	footer.row {
+		margin-top: -20em;
+		height: 20em;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+       	#main {
+                padding-bottom: 28em;
+       	}
+
+        footer.row {
+                margin-top: -28em;
+                height: 28em;
+       	}
+
+}
+
+
