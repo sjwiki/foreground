@@ -14,7 +14,8 @@ body {
   color: #222222;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Noto Serif', serif;
+ /* "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;*/
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1063,7 +1064,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   font-style: normal;
   color: #222222;
@@ -1176,26 +1177,6 @@ acronym {
 
 abbr {
   text-transform: none; }
-
-/* Blockquotes */
-blockquote {
-  margin: 0 0 1.25em;
-  padding: 0.5625em 1.25em 0 1.1875em;
-  border-left: 1px solid #dddddd; }
-  blockquote cite {
-    display: block;
-    font-size: 0.8125em;
-    color: #555555; }
-    blockquote cite:before {
-      content: "\2014 \0020"; }
-    blockquote cite a,
-    blockquote cite a:visited {
-      color: #555555; }
-
-blockquote,
-blockquote p {
-  line-height: 1.6;
-  color: #6f6f6f; }
 
 /* Microformats */
 .vcard {
