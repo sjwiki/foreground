@@ -47,7 +47,8 @@ class Skinforeground extends SkinTemplate {
 		parent::initPage($out);
 
 		$viewport_meta = 'width=device-width, user-scalable=yes, initial-scale=1.0';
-	  $out->addMeta('viewport', $viewport_meta);
+		$out->addMeta('viewport', $viewport_meta);
+		$out->addStyle( '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,greek');
 		$out->addModuleScripts('skins.foreground');
 	}
 
@@ -172,7 +173,7 @@ class foregroundTemplate extends BaseTemplate {
 				<div id="siteNotice" class="sitenotice panel radius"><?php echo $this->text('sitename') . ' '. wfMessage( 'foreground-browsermsg' )->text(); ?></div>
 				<![endif]-->
 
-				<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice panel radius"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
+				<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice" class="sitenotice"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
 				<?php if ( $this->data['newtalk'] ) { ?><div id="usermessage" class="newtalk panel radius"><?php $this->html( 'newtalk' ); ?></div><?php } ?>
 				</div>
 		</div>
@@ -199,8 +200,9 @@ class foregroundTemplate extends BaseTemplate {
 						$displaytitle = str_replace($pagetitle, $newtitle, $displaytitle);
 					?><h4 class="namespace label"><?php print $namespace; ?></h4><?php } ?>
 					<h2 class="title"><?php print $displaytitle; ?></h2>
-					<!--<?php if ( $this->data['isarticle'] ) { ?><h3 id="tagline"><?php $this->msg( 'tagline' ) ?></h3><?php } ?>-->
-					<!--<h5 class="subtitle"><?php $this->html('subtitle') ?></h5> -->
+						<span id="share-buttons"><div class="addthis_sharing_toolbox"></div></span>
+<!--<?php if ( $this->data['isarticle'] ) { ?><h3 id="tagline"><?php $this->msg( 'tagline' ) ?></h3><?php } ?>-->
+					<h5 class="subtitle"><?php $this->html('subtitle') ?></h5> 
 					<div class="clear_both"></div>
 					<div class="mw-bodytext">
 						<?php $this->html('bodytext') ?>
@@ -211,9 +213,20 @@ class foregroundTemplate extends BaseTemplate {
 		    </div>
 		</div>
 
+<!--					<div id="recommended-footer"></div>	-->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!--<div class="addthis_recommended_horizontal"></div>-->
+
 	</div> <!-- closing tag of wrap -->
+
+
 			<footer class="row">
-				<div id="footer">
+
+			
+
+
+					<div id="footer">
+
 					<?php if ($wgForegroundFeatures['addThisFollowPUBID'] != '') { ?>
 						<div class="social-footer large-12 small-12 columns">
 							<div class="social-links">
