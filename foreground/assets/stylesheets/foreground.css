@@ -146,6 +146,19 @@ div.small-9.columns textarea {
   margin-bottom: 0.25em;
 }
 
+li#footer-copyright {
+display: block;
+}
+
+@media only screen and (max-width: 768px) {
+li#footer-privacy {display: block;
+ float: none; margin-right: 0;}
+li#footer-about {display: block;
+ float: none; margin-right: 0;}
+li#footer-disclaimer {display: block;
+ float: none; margin-right: 0;}
+}
+
 footer.row {
 color: #555555;
 text-align: center;
@@ -249,34 +262,17 @@ ul#drop1.f-dropdown {
   margin: .5em 1.25em;
 }
 
-footer.row ul {
+/*footer.row ul {
  display:inline;
   list-style-type: none;
 /*  margin: .5em 1.25em;*/
  
-}
+}*/
 
-li.poweredby {
-
-padding:0;
-margin:0;
+footer.row ul {
+  list-style-type: none;
+  margin: 0 0 1em 0;
 }
-li#footer-mobileview
-{
-padding:0;
-padding-top:0.75em;
-display:block;
-margin:0;
-padding-bottom:1em;
-}
-li#poweredby {
-display:block;
-padding-top:0.75em;
-}
-li#footer-copyright {
-display:block;
-}
-
 
 footer.row li {
  padding-left:0;
@@ -951,6 +947,17 @@ div.thumbcaption{
  margin-bottom: 0.1em;
 }
 
+.embedvideo {
+/*margin: -3px !important;*/
+}
+
+
+div.videocaption{
+ font-size: 0.8em;
+ padding: 0.2em;
+}
+
+
 
 
 /* Don't like the black top bar? Change the color here:
@@ -1137,29 +1144,6 @@ display:inline !important;
 /*padding-top: 0.5em;*/
 margin-top: -0.75em;
 }
-ol.references {
-width:inherit;
-margin: 0 !important;
-padding: 0 !important;
-
-
-word-wrap: break-word;
-list-style-position: inside;
-
-}
-
-
-@media only screen and (max-width: 400px) {
-
-ol.references {
-max-width:18em;
--moz-column-count: 1 !important;
--webkit-column-count: 1 !important;
-column-count: 1 !important;
-
-}
- }
-
 .cquotecite {
 background-color: #fff !important;
 }
@@ -1187,3 +1171,19 @@ top: 2px;
   padding-left:15px !important;
 }
 
+.addthis-smartlayers .at4-recommended .at-h3.at-recommended-label.{
+ font-weight: 700 !important;
+ color: #222 !important;
+}
+
+.at4-logo-container {
+ display: none !important;
+}
+
+
+span.PDFlink {
+    background: url("//upload.wikimedia.org/wikipedia/commons/2/23/Icons-mini-file_acrobat.gif") no-repeat right;
+    /* @noflip */
+    padding-right: 18px;
+}
+ 

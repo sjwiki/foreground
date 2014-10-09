@@ -211,11 +211,10 @@ class foregroundTemplate extends BaseTemplate {
 		    	<div class="group"><?php $this->html('catlinks'); ?></div>
 		    	<?php $this->html('dataAfterContent'); ?>
 		    </div>
+				<div id="recommended-footer"></div>	
+
 		</div>
 
-<!--					<div id="recommended-footer"></div>	-->
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<!--<div class="addthis_recommended_horizontal"></div>-->
 
 	</div> <!-- closing tag of wrap -->
 

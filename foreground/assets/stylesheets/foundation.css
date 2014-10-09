@@ -2782,7 +2782,7 @@ text-decoration:none;
       .top-bar-section .dropdown li.title h5 {
         margin-bottom: 0; }
         .top-bar-section .dropdown li.title h5 a {
-          color: white;
+          color: #555;
           line-height: 22.5px;
           display: block; }
     .top-bar-section .dropdown label {
