@@ -42,7 +42,9 @@ $wgResourceModules['skins.foreground'] = array(
     	'foreground/assets/stylesheets/foreground.css',
         'foreground/assets/stylesheets/foreground-print.css',
     	'foreground/assets/stylesheets/jquery.autocomplete.css',
-    	'foreground/assets/stylesheets/responsive-tables.css'
+    	'foreground/assets/stylesheets/responsive-tables.css',
+    	'foreground/assets/slick/slick/slick.css'
+	
     ),
     'scripts'        => array(
         'foreground/assets/scripts/vendor/custom.modernizr.js',
@@ -57,7 +59,10 @@ $wgResourceModules['skins.foreground'] = array(
         'foreground/assets/scripts/foundation/foundation.placeholder.js',
         'foreground/assets/scripts/foundation/foundation.forms.js',
         'foreground/assets/scripts/foundation/foundation.alerts.js',
-        'foreground/assets/scripts/foreground.js'
+        'foreground/assets/scripts/foreground.js',
+        'foreground/assets/slick/slick/slick.min.js',
+	'foreground/assets/slick/slick/slick_init.js'
+
     ),
     'remoteBasePath' => &$GLOBALS['wgStylePath'],
     'localBasePath'  => &$GLOBALS['wgStyleDirectory']

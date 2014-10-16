@@ -1,4 +1,3 @@
-
 body {
   line-height: 1.6em;
 }
@@ -108,8 +107,23 @@ h2.title {
   font-size: 3em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-
+  word-break: break-word;
 }
+
+@media only screen and (max-width: 400px) {
+	h2.title {
+		font-size: 2.25em !important;		
+	}
+}
+
+/*
+@media only screen and (max-width: 300px) {
+        h2.title {
+                font-size: 2em !important;
+        }
+}*/
+
+
 
 h3#tagline {
   font-style: italic;
@@ -398,9 +412,12 @@ padding: 0;
 }
 
 h5.subtitle {
-	font-weight:inherit;
+
+	font-weight: inherit;
 	font-size: 0.75em;
-	padding-bottom: 1em;
+	margin-top: -1.5em;
+	padding-bottom: 2em;
+
 }
 
 .page-Special_SpecialPages h2 {
@@ -1142,7 +1159,8 @@ display:inline !important;
 }
 .addthis_sharing_toolbox {
 /*padding-top: 0.5em;*/
-margin-top: -0.75em;
+margin-top: -1.25em;
+margin-bottom: 1.5em;
 }
 .cquotecite {
 background-color: #fff !important;
@@ -1187,3 +1205,6 @@ span.PDFlink {
     padding-right: 18px;
 }
  
+ol.references {
+	word-break: break-word;
+}
